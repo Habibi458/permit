@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Add New User</title>
+</head>
+<body>
+    <h1 id="showtitle"> Show Your Data</h1>
+   <ul>
+       <% for (let item of items) { %>
+        <h3 class="head">Last Name: <%= item.lname %>  </h3> 
+        <h3 class="head">First and Middle Name:<%= item.name %> </h3> 
+        <h3 class="head"><%= item.address %> </h3> 
+        <h3 class="head"><%= item.state %> </h3> 
+        <h3 class="head"><%= item.birthday %> </h3> 
+        <h3 class="head"><%= item.height %> </h3> 
+        <h3 class="head"><%= item.eyecolor %> </h3> 
+        <h3 class="head"><%= item.weight %> </h3> 
+        <h3 class="head"><%= item.sex %> </h3> 
+        <h3>
+            <button>
+                <a href="/show/<%= item._id%>/edit">Edit</a> 
+            </button>
+
+            <form action="/show/<%= item._id %>?_method=DELETE"  method="POST">
+                <button>Delete</button>
+             </form>
+        </h3>
+        <%} %>
+   </ul>
+</body>
+</html>
